@@ -44,7 +44,7 @@ export const RegisterForm = () => {
   };
 
   return (
-    <div className='relative flex flex-col p-5 bottom-56 md:absolute 2xl:bottom-[-80px] 2xl:right-[200px] xl:bottom-[-80px] xl:right-[200px] lg:bottom-[-80px] lg:right-[100px] md:bottom-[-80px] md:right-[100px] sm:bottom-[-80px] sm:right-[100px]'>
+    <div className='relative flex flex-col p-5 bottom-56 md:absolute 2xl:bottom-[-20px] 2xl:right-[200px] xl:bottom-[-80px] xl:right-[200px] lg:bottom-[-80px] lg:right-[100px] md:bottom-[-80px] md:right-[100px] sm:bottom-[-80px] sm:right-[100px]'>
       <div className='flex items-center justify-end gap-3 p-5 2xl:mb-6 xl:mb-5 lg:mb-4 md:mb-3 sm:mb-2'>
         <p className='text-[#fff] text-[10px] 2xl:text-[24px] xl:text-[22px] lg:text-[20px] md:text-[18px] sm:text-[16px] font-medium'>
           Already a member ?
@@ -150,7 +150,7 @@ export const RegisterForm = () => {
                 </div>
               </button>
             </div>
-            <div className='px-10'>
+            <div className='px-10 py-6'>
               <Social />
             </div>
           </form>

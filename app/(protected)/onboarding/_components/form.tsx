@@ -270,35 +270,35 @@ export const OnboardingForm = () => {
   };
 
   return (
-    <section className="container absolute inset-0 flex flex-col justify-between p-24">
+    <section className='container absolute inset-0 flex flex-col justify-between p-24'>
       {/* steps */}
-      <nav aria-label="Progress">
-        <ol role="list" className="space-y-4 md:flex md:space-x-8 md:space-y-0">
+      <nav aria-label='Progress'>
+        <ol role='list' className='space-y-4 md:flex md:space-x-8 md:space-y-0'>
           {steps.map((step, index) => (
-            <li key={step.name} className="md:flex-1">
+            <li key={step.name} className='md:flex-1'>
               {currentStep > index ? (
-                <div className="group flex w-full flex-col border-l-4 border-sky-600 py-2 pl-4 transition-colors md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4">
-                  <span className="text-sm font-medium text-sky-600 transition-colors ">
+                <div className='group flex w-full flex-col border-l-4 border-sky-600 py-2 pl-4 transition-colors md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4'>
+                  <span className='text-sm font-medium text-sky-600 transition-colors '>
                     {step.id}
                   </span>
-                  <span className="text-sm font-medium">{step.name}</span>
+                  <span className='text-sm font-medium'>{step.name}</span>
                 </div>
               ) : currentStep === index ? (
                 <div
-                  className="flex w-full flex-col border-l-4 border-sky-600 py-2 pl-4 md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4"
-                  aria-current="step"
+                  className='flex w-full flex-col border-l-4 border-sky-600 py-2 pl-4 md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4'
+                  aria-current='step'
                 >
-                  <span className="text-sm font-medium text-sky-600">
+                  <span className='text-sm font-medium text-sky-600'>
                     {step.id}
                   </span>
-                  <span className="text-sm font-medium">{step.name}</span>
+                  <span className='text-sm font-medium'>{step.name}</span>
                 </div>
               ) : (
-                <div className="group flex w-full flex-col border-l-4 border-gray-200 py-2 pl-4 transition-colors md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4">
-                  <span className="text-sm font-medium text-gray-500 transition-colors">
+                <div className='group flex w-full flex-col border-l-4 border-gray-200 py-2 pl-4 transition-colors md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4'>
+                  <span className='text-sm font-medium text-gray-500 transition-colors'>
                     {step.id}
                   </span>
-                  <span className="text-sm font-medium">{step.name}</span>
+                  <span className='text-sm font-medium'>{step.name}</span>
                 </div>
               )}
             </li>
@@ -307,50 +307,50 @@ export const OnboardingForm = () => {
       </nav>
 
       {/* Form */}
-      <form className="py-12" onSubmit={handleSubmit(onSubmit)}>
+      <form className='py-12' onSubmit={handleSubmit(onSubmit)}>
         {currentStep === 0 && (
           <motion.div
             initial={{ x: delta >= 0 ? '50%' : '-50%', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="p-10 rounded-sm shadow-md"
+            className='p-10 rounded-sm shadow-md'
           >
             <Heading
-              title="Personal Information"
-              subtitle="Provide your personal details."
+              title='Personal Information'
+              subtitle='Provide your personal details.'
             />
-            <div className="mt-10 flex items-center gap-4 justify-between">
-              <div className="w-full max-w-sm">
-                <Label htmlFor="name">Name</Label>
+            <div className='mt-10 sm:flex items-center gap-4 justify-between'>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='name'>Name</Label>
                 <Input
-                  type="text"
-                  id="name"
+                  type='text'
+                  id='name'
                   {...register('name')}
-                  className="w-full"
+                  className='w-full'
                 />
                 {errors.name && (
-                  <p className="text-destructive mt-1">{errors.name.message}</p>
+                  <p className='text-destructive mt-1'>{errors.name.message}</p>
                 )}
               </div>
 
-              <div className="w-full max-w-sm">
-                <Label htmlFor="email">Email</Label>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='email'>Email</Label>
                 <Input
-                  type="email"
-                  id="email"
+                  type='email'
+                  id='email'
                   {...register('email')}
-                  className="w-full"
+                  className='w-full'
                 />
                 {errors.email && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.email.message}
                   </p>
                 )}
               </div>
 
-              <div className="w-full max-w-sm">
-                <Label htmlFor="mobile">Mobile</Label>
-                <Input type="text" id="mobile" {...register('mobile')} />
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='mobile'>Mobile</Label>
+                <Input type='text' id='mobile' {...register('mobile')} />
                 {/* <PhoneInput
                   placeholder="Enter phone number"
                   value={mobileValue}
@@ -359,18 +359,18 @@ export const OnboardingForm = () => {
                 /> */}
 
                 {errors.mobile && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.mobile.message}
                   </p>
                 )}
               </div>
             </div>
-            <div className="mt-10 flex items-center gap-4 justify-between">
-              <div className="w-full max-w-sm">
-                <Label htmlFor="age">Age</Label>
+            <div className='mt-10 sm:flex items-center gap-4 justify-between'>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='age'>Age</Label>
                 <Select onValueChange={(event) => setValue('age', event)}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Age" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Age' />
                   </SelectTrigger>
                   <SelectContent>
                     {age.map((option, index) => (
@@ -381,41 +381,41 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.age && (
-                  <p className="text-destructive mt-1">{errors.age.message}</p>
+                  <p className='text-destructive mt-1'>{errors.age.message}</p>
                 )}
               </div>
 
-              <div className="w-full max-w-sm">
-                <Label htmlFor="dob">DOB</Label>
-                <Input type="date" id="dob" {...register('dob')} />
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='dob'>DOB</Label>
+                <Input type='date' id='dob' {...register('dob')} />
                 {errors.dob && (
-                  <p className="text-destructive mt-1">{errors.dob.message}</p>
+                  <p className='text-destructive mt-1'>{errors.dob.message}</p>
                 )}
               </div>
-              <div className="w-full max-w-sm">
-                <Label htmlFor="gender">Gender</Label>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='gender'>Gender</Label>
                 <Select onValueChange={(event) => setValue('gender', event)}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Gender" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Gender' />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="male">Male</SelectItem>
-                    <SelectItem value="female">Female</SelectItem>
+                    <SelectItem value='male'>Male</SelectItem>
+                    <SelectItem value='female'>Female</SelectItem>
                   </SelectContent>
                 </Select>
                 {errors.gender && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.gender.message}
                   </p>
                 )}
               </div>
             </div>
-            <div className="mt-10 flex items-center gap-4 justify-between">
-              <div className="w-full max-w-sm">
-                <Label htmlFor="city">City</Label>
+            <div className='mt-10 sm:flex items-center gap-4 justify-between'>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='city'>City</Label>
                 <Select onValueChange={(event) => setValue('city', event)}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select City" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select City' />
                   </SelectTrigger>
                   <SelectContent>
                     {cities.map((option, index) => (
@@ -426,15 +426,15 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.city && (
-                  <p className="text-destructive mt-1">{errors.city.message}</p>
+                  <p className='text-destructive mt-1'>{errors.city.message}</p>
                 )}
               </div>
 
-              <div className="w-full max-w-sm">
-                <Label htmlFor="state">State</Label>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='state'>State</Label>
                 <Select onValueChange={(event) => setValue('state', event)}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select State" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select State' />
                   </SelectTrigger>
                   <SelectContent>
                     {states.map((option, index) => (
@@ -445,17 +445,17 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.state && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.state.message}
                   </p>
                 )}
               </div>
 
-              <div className="w-full max-w-sm">
-                <Label htmlFor="country">Country</Label>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='country'>Country</Label>
                 <Select onValueChange={(event) => setValue('country', event)}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Country" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Country' />
                   </SelectTrigger>
                   <SelectContent>
                     {countries.map((option, index) => (
@@ -466,7 +466,7 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.country && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.country.message}
                   </p>
                 )}
@@ -480,24 +480,24 @@ export const OnboardingForm = () => {
             initial={{ x: delta >= 0 ? '50%' : '-50%', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="p-10 flex gap-20 rounded-sm shadow-md"
+            className='p-10 flex gap-20 rounded-sm shadow-md'
           >
             <div>
               <Heading
-                title="Profile Image"
-                subtitle="Provide your profile image."
+                title='Profile Image'
+                subtitle='Provide your profile image.'
               />
-              <div className="mt-10 flex items-center justify-between">
-                <div className="w-full max-w-sm">
+              <div className='mt-10 flex items-center justify-between'>
+                <div className='w-full max-w-sm'>
                   <Input
-                    type="file"
-                    accept="image/*"
-                    placeholder="Upload image"
+                    type='file'
+                    accept='image/*'
+                    placeholder='Upload image'
                     onChange={(e) => handleImage(e)}
-                    className="w-full bg-slate-50 md:w-[300px]"
+                    className='w-full bg-slate-50 md:w-[300px]'
                   />
                   {errors.profileImage && (
-                    <p className="text-destructive mt-1">
+                    <p className='text-destructive mt-1'>
                       {errors.profileImage.message}
                     </p>
                   )}
@@ -512,8 +512,8 @@ export const OnboardingForm = () => {
                     src={previewImage}
                     width={500}
                     height={500}
-                    alt="Picture of the user"
-                    className="w-[250px] rounded-md"
+                    alt='Picture of the user'
+                    className='w-[250px] rounded-md'
                   />
                 </div>
               )}
@@ -526,20 +526,20 @@ export const OnboardingForm = () => {
             initial={{ x: delta >= 0 ? '50%' : '-50%', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="p-10 rounded-sm shadow-md"
+            className='p-10 rounded-sm shadow-md'
           >
             <Heading
-              title="Personal Background"
-              subtitle="Provide your background details."
+              title='Personal Background'
+              subtitle='Provide your background details.'
             />
-            <div className="mt-10 flex items-center gap-4 justify-between">
-              <div className="w-full max-w-sm">
-                <Label htmlFor="maritalStatus">Marital Status</Label>
+            <div className='mt-10 flex items-center gap-4 justify-between'>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='maritalStatus'>Marital Status</Label>
                 <Select
                   onValueChange={(event) => setValue('maritalStatus', event)}
                 >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Marital Status" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Marital Status' />
                   </SelectTrigger>
                   <SelectContent>
                     {maritalStatus.map((option, index) => (
@@ -550,17 +550,17 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.maritalStatus && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.maritalStatus.message}
                   </p>
                 )}
               </div>
 
-              <div className="w-full max-w-sm">
-                <Label htmlFor="height">Height</Label>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='height'>Height</Label>
                 <Select onValueChange={(event) => setValue('height', event)}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Height" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Height' />
                   </SelectTrigger>
                   <SelectContent>
                     {heights.map((option, index) => (
@@ -571,19 +571,19 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.height && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.height.message}
                   </p>
                 )}
               </div>
 
-              <div className="w-full max-w-sm">
-                <Label htmlFor="physicalStatus">Physical Status</Label>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='physicalStatus'>Physical Status</Label>
                 <Select
                   onValueChange={(event) => setValue('physicalStatus', event)}
                 >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Physical Status" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Physical Status' />
                   </SelectTrigger>
                   <SelectContent>
                     {physicalStatus.map((option, index) => (
@@ -594,19 +594,19 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.physicalStatus && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.physicalStatus.message}
                   </p>
                 )}
               </div>
             </div>
 
-            <div className="mt-10 flex items-center gap-4">
-              <div className="w-full">
-                <Label htmlFor="religion">Religion</Label>
+            <div className='mt-10 flex items-center gap-4'>
+              <div className='w-full'>
+                <Label htmlFor='religion'>Religion</Label>
                 <Select onValueChange={(event) => setValue('religion', event)}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Religion" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Religion' />
                   </SelectTrigger>
                   <SelectContent>
                     {religions.map((option, index) => (
@@ -617,17 +617,17 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.religion && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.religion.message}
                   </p>
                 )}
               </div>
 
-              <div className="w-full">
-                <Label htmlFor="language">Language</Label>
+              <div className='w-full'>
+                <Label htmlFor='language'>Language</Label>
                 <Select onValueChange={(event) => setValue('language', event)}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Language" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Language' />
                   </SelectTrigger>
                   <SelectContent>
                     {languages.map((option, index) => (
@@ -638,21 +638,21 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.language && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.language.message}
                   </p>
                 )}
               </div>
             </div>
 
-            <div className="mt-10 flex items-center gap-4 justify-between">
-              <div className="w-full max-w-sm">
-                <Label htmlFor="familyStatus">Family Status</Label>
+            <div className='mt-10 flex items-center gap-4 justify-between'>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='familyStatus'>Family Status</Label>
                 <Select
                   onValueChange={(event) => setValue('familyStatus', event)}
                 >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Family Status" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Family Status' />
                   </SelectTrigger>
                   <SelectContent>
                     {familyStatus.map((option, index) => (
@@ -663,19 +663,19 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.familyStatus && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.familyStatus.message}
                   </p>
                 )}
               </div>
 
-              <div className="w-full max-w-sm">
-                <Label htmlFor="familyType">Family Type</Label>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='familyType'>Family Type</Label>
                 <Select
                   onValueChange={(event) => setValue('familyType', event)}
                 >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Family Type" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Family Type' />
                   </SelectTrigger>
                   <SelectContent>
                     {familyTypes.map((option, index) => (
@@ -686,19 +686,19 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.familyType && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.familyType.message}
                   </p>
                 )}
               </div>
 
-              <div className="w-full max-w-sm">
-                <Label htmlFor="familyValues">Family Values</Label>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='familyValues'>Family Values</Label>
                 <Select
                   onValueChange={(event) => setValue('familyValues', event)}
                 >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Family Values" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Family Values' />
                   </SelectTrigger>
                   <SelectContent>
                     {familyValues.map((option, index) => (
@@ -709,7 +709,7 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.familyValues && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.familyValues.message}
                   </p>
                 )}
@@ -723,18 +723,18 @@ export const OnboardingForm = () => {
             initial={{ x: delta >= 0 ? '50%' : '-50%', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="p-10 rounded-sm shadow-md"
+            className='p-10 rounded-sm shadow-md'
           >
             <Heading
-              title="Professional Details"
-              subtitle="Provide your professional details."
+              title='Professional Details'
+              subtitle='Provide your professional details.'
             />
-            <div className="mt-10 flex items-center gap-4 justify-between">
-              <div className="w-full max-w-sm">
-                <Label htmlFor="education">Education</Label>
+            <div className='mt-10 flex items-center gap-4 justify-between'>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='education'>Education</Label>
                 <Select onValueChange={(event) => setValue('education', event)}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Education" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Education' />
                   </SelectTrigger>
                   <SelectContent>
                     {educationalQualifications.map((option, index) => (
@@ -745,19 +745,19 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.education && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.education.message}
                   </p>
                 )}
               </div>
 
-              <div className="w-full max-w-sm">
-                <Label htmlFor="employedSector">Employed In</Label>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='employedSector'>Employed In</Label>
                 <Select
                   onValueChange={(event) => setValue('employedSector', event)}
                 >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Employed Sector" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Employed Sector' />
                   </SelectTrigger>
                   <SelectContent>
                     {employeeSectors.map((option, index) => (
@@ -768,17 +768,17 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.employedSector && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.employedSector.message}
                   </p>
                 )}
               </div>
 
-              <div className="w-full max-w-sm">
-                <Label htmlFor="jobTitle">Occupation</Label>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='jobTitle'>Occupation</Label>
                 <Select onValueChange={(event) => setValue('jobTitle', event)}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Occupation" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Occupation' />
                   </SelectTrigger>
                   <SelectContent>
                     {occupations.map((option, index) => (
@@ -789,20 +789,20 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.jobTitle && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.jobTitle.message}
                   </p>
                 )}
               </div>
             </div>
-            <div className="mt-10 flex items-center justify-between">
-              <div className="w-full max-w-sm">
-                <Label htmlFor="annualIncome">Annual Income</Label>
+            <div className='mt-10 flex items-center justify-between'>
+              <div className='w-full max-w-sm'>
+                <Label htmlFor='annualIncome'>Annual Income</Label>
                 <Select
                   onValueChange={(event) => setValue('annualIncome', event)}
                 >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Annual Income" />
+                  <SelectTrigger className='w-full'>
+                    <SelectValue placeholder='Select Annual Income' />
                   </SelectTrigger>
                   <SelectContent>
                     {annualIncomes.map((option, index) => (
@@ -813,7 +813,7 @@ export const OnboardingForm = () => {
                   </SelectContent>
                 </Select>
                 {errors.annualIncome && (
-                  <p className="text-destructive mt-1">
+                  <p className='text-destructive mt-1'>
                     {errors.annualIncome.message}
                   </p>
                 )}
@@ -827,23 +827,23 @@ export const OnboardingForm = () => {
             initial={{ x: delta >= 0 ? '50%' : '-50%', opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="p-10 flex flex-col items-center rounded-sm shadow-md"
+            className='p-10 flex flex-col items-center rounded-sm shadow-md'
           >
             <Heading
-              title="Mobile Number Verification"
-              subtitle="Verify your mobile number to continue"
+              title='Mobile Number Verification'
+              subtitle='Verify your mobile number to continue'
             />
-            <div className="mt-10 flex items-center justify-between">
-              <div className="flex flex-col justify-center gap-2 w-full max-w-sm">
+            <div className='mt-10 flex items-center justify-between'>
+              <div className='flex flex-col justify-center gap-2 w-full max-w-sm'>
                 {showMobile && (
                   <>
-                    <Label htmlFor="employedSector">Number</Label>
+                    <Label htmlFor='employedSector'>Number</Label>
                     <Input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                      className="w-[300px]"
+                      type='tel'
+                      id='phone'
+                      name='phone'
+                      pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'
+                      className='w-[300px]'
                     />
                     <Button
                       onClick={() => {
@@ -862,10 +862,10 @@ export const OnboardingForm = () => {
                       onChange={setOtp}
                       value={otp ?? ''}
                       maxLength={6}
-                      containerClassName="group flex items-center has-[:disabled]:opacity-30"
+                      containerClassName='group flex items-center has-[:disabled]:opacity-30'
                       render={({ slots }) => (
                         <>
-                          <div className="flex">
+                          <div className='flex'>
                             {slots.slice(0, 3).map((slot, idx) => (
                               <Slot key={idx} {...slot} />
                             ))}
@@ -873,7 +873,7 @@ export const OnboardingForm = () => {
 
                           <FakeDash />
 
-                          <div className="flex">
+                          <div className='flex'>
                             {slots.slice(3).map((slot, idx) => (
                               <Slot key={idx} {...slot} />
                             ))}
@@ -891,7 +891,7 @@ export const OnboardingForm = () => {
                   </>
                 )}
                 {verified && (
-                  <Button type="submit" onClick={handleSubmit(onSubmit)}>
+                  <Button type='submit' onClick={handleSubmit(onSubmit)}>
                     Create Profile
                   </Button>
                 )}
@@ -902,47 +902,47 @@ export const OnboardingForm = () => {
       </form>
 
       {/* Navigation */}
-      <div className="mt-8 pt-5">
-        <div className="flex justify-between">
+      <div className='mt-8 pt-5'>
+        <div className='flex justify-between'>
           <button
-            type="button"
+            type='button'
             onClick={prev}
             disabled={currentStep === 0}
-            className="rounded bg-white px-2 py-1 text-sm font-semibold text-sky-900 shadow-sm ring-1 ring-inset ring-sky-300 hover:bg-sky-50 disabled:cursor-not-allowed disabled:opacity-50"
+            className='rounded bg-white px-2 py-1 text-sm font-semibold text-sky-900 shadow-sm ring-1 ring-inset ring-sky-300 hover:bg-sky-50 disabled:cursor-not-allowed disabled:opacity-50'
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="h-6 w-6"
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth='1.5'
+              stroke='currentColor'
+              className='h-6 w-6'
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 19.5L8.25 12l7.5-7.5"
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M15.75 19.5L8.25 12l7.5-7.5'
               />
             </svg>
           </button>
           <button
-            type="button"
+            type='button'
             onClick={next}
             disabled={currentStep === steps.length - 1}
-            className="rounded bg-white px-2 py-1 text-sm font-semibold text-sky-900 shadow-sm ring-1 ring-inset ring-sky-300 hover:bg-sky-50 disabled:cursor-not-allowed disabled:opacity-50"
+            className='rounded bg-white px-2 py-1 text-sm font-semibold text-sky-900 shadow-sm ring-1 ring-inset ring-sky-300 hover:bg-sky-50 disabled:cursor-not-allowed disabled:opacity-50'
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="h-6 w-6"
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth='1.5'
+              stroke='currentColor'
+              className='h-6 w-6'
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M8.25 4.5l7.5 7.5-7.5 7.5'
               />
             </svg>
           </button>
