@@ -1,6 +1,6 @@
 'use client';
 
-import UnseenChatToast from '@/app/(protected)/chat/_components/unseen-chat-toast';
+import UnseenChatToast from '@/app/[lang]/(protected)/chat/_components/unseen-chat-toast';
 import { pusherClient } from '@/lib/pusher';
 import { chatHrefConstructor, toPusherKey } from '@/lib/utils';
 import { Message, User } from '@prisma/client';
