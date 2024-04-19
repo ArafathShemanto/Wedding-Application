@@ -270,7 +270,7 @@ export const OnboardingForm = () => {
   };
 
   return (
-    <section className='container absolute inset-0 flex flex-col justify-between p-24'>
+    <section className='sm:container absolute inset-0 flex flex-col justify-between sm:p-24 px-8'>
       {/* steps */}
       <nav aria-label='Progress'>
         <ol role='list' className='space-y-4 md:flex md:space-x-8 md:space-y-0'>
@@ -307,7 +307,7 @@ export const OnboardingForm = () => {
       </nav>
 
       {/* Form */}
-      <form className='py-12' onSubmit={handleSubmit(onSubmit)}>
+      <form className='pt-12 pb-6' onSubmit={handleSubmit(onSubmit)}>
         {currentStep === 0 && (
           <motion.div
             initial={{ x: delta >= 0 ? '50%' : '-50%', opacity: 0 }}
@@ -902,7 +902,7 @@ export const OnboardingForm = () => {
       </form>
 
       {/* Navigation */}
-      <div className='mt-8 pt-5'>
+      <div className='py-5'>
         <div className='flex justify-between'>
           <button
             type='button'
