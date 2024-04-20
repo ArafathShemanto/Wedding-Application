@@ -29,32 +29,34 @@ const Carousel: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[40vh] md:h-[90vh] overflow-hidden">
+    <div className='relative w-full h-[40vh] md:h-[90vh] overflow-hidden'>
       <div
-        className="flex transition-transform duration-1000 ease-in-out"
+        className='flex transition-transform duration-1000 ease-in-out'
         style={{
           transform: `translateX(-${currentSlide * 100}vw)`,
           width: `${photos.length * 100}vw`,
         }}
       >
         {photos.map((photo, index) => (
-          <div key={index} className="w-full h-full relative">
+          <div key={index} className='w-full h-full relative'>
             <Image
               src={photo}
               alt={`Slide ${index + 1}`}
-              className="w-full h-[40vh] md:h-full object-cover"
+              className='w-full h-[40vh] md:h-full object-cover'
+              width={1920}
+              height={1080}
             />
           </div>
         ))}
       </div>
       <div
-        className="absolute top-1/2 left-5 cursor-pointer text-24px text-white"
+        className='absolute top-1/2 left-5 cursor-pointer text-24px text-white'
         onClick={goToPrevSlide}
       >
         &#10094;
       </div>
       <div
-        className="absolute top-1/2 right-5 cursor-pointer text-24px text-white"
+        className='absolute top-1/2 right-5 cursor-pointer text-24px text-white'
         onClick={goToNextSlide}
       >
         &#10095;

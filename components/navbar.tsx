@@ -38,6 +38,7 @@ const Navbar: FC<NavbarProps> = ({ user }) => {
             height='40'
             fill='none'
             viewBox='0 0 82 40'
+            className='sm:w-[60px] md:w-[82px]'
           >
             <path
               fill='#FFD43D'
@@ -63,42 +64,53 @@ const Navbar: FC<NavbarProps> = ({ user }) => {
               <Button
                 asChild
                 variant={pathname === '/dashboard' ? 'default' : 'outline'}
+                className='sm:px-2 sm:h-8 md:px-4 md:h-10'
               >
                 <Link href='/dashboard'>
-                  <MdHome className='text-[20px] mr-1' /> Home
+                  <MdHome className='sm:text-[16px] md:text-[20px] mr-1' /> Home
                 </Link>
               </Button>
 
               <Button
                 asChild
-                variant={pathname.startsWith('/matches') ? 'default' : 'outline'}
+                variant={
+                  pathname.startsWith('/matches') ? 'default' : 'outline'
+                }
+                className='sm:px-2 sm:h-8 md:px-4 md:h-10'
               >
                 <Link href='/matches/all-matches'>
-                  <MdHowToReg className='text-[20px] mr-1' /> Matches
+                  <MdHowToReg className='sm:text-[16px] md:text-[20px] mr-1' />{' '}
+                  Matches
                 </Link>
               </Button>
               <Button
                 asChild
                 variant={pathname === '/search' ? 'default' : 'outline'}
+                className='sm:px-2 sm:h-8 md:px-4 md:h-10'
               >
                 <Link href='/search'>
-                  <MdOutlineSearch className='text-[20px] mr-1' /> Search
+                  <MdOutlineSearch className='sm:text-[16px] md:text-[20px] mr-1' />{' '}
+                  Search
                 </Link>
               </Button>
               <Button
                 asChild
                 variant={pathname.startsWith('/chat') ? 'default' : 'outline'}
+                className='sm:px-2 sm:h-8 md:px-4 md:h-10'
               >
                 <Link href='/chat'>
-                  <IoChatbubbleEllipses className='text-[18px] mr-1' /> Chat
+                  <IoChatbubbleEllipses className='sm:text-[16px] md:text-[20px] mr-1' />{' '}
+                  Chat
                 </Link>
               </Button>
               <Button
                 asChild
                 variant={pathname === '/settings' ? 'default' : 'outline'}
+                className='sm:px-2 sm:h-8 md:px-4 md:h-10'
               >
                 <Link href='/settings'>
-                  <MdSettings className='text-[20px] mr-1' /> Settings
+                  <MdSettings className='sm:text-[16px] md:text-[20px] mr-1' />{' '}
+                  Settings
                 </Link>
               </Button>
             </>
